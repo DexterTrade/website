@@ -12,8 +12,10 @@ import { ScaleIn } from "@/components/animations/scale-in"
 import { HoverCard } from "@/components/animations/hover-card"
 import { CountUp } from "@/components/animations/count-up"
 import { ScrollProgress } from "@/components/animations/scroll-progress"
+import { useTheme } from "next-themes"
 
 export default function Home() {
+  const { theme } = useTheme();
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollProgress />
@@ -79,7 +81,7 @@ export default function Home() {
                   <HoverButton
                     size="lg"
                     variant="outline"
-                    className="text-white border-white hover:bg-white/20 hover:text-white font-semibold px-6 sm:px-8 w-full sm:w-auto backdrop-blur-sm"
+                    className={`${theme==="dark"?"text-white":"text-black"} border-white hover:bg-white/20 hover:text-white font-semibold px-6 sm:px-8 w-full sm:w-auto backdrop-blur-sm`}
                     hoverEffect="glow"
                     rippleColor="rgba(255, 255, 255, 0.3)"
                   >
@@ -359,7 +361,7 @@ export default function Home() {
                 <AnimatedButton
                   size="lg"
                   variant="outline"
-                  className="text-white border-white hover:bg-white/10 hover:text-white font-semibold px-6 md:px-8 w-full sm:w-auto"
+                  className={`${theme==="dark"?"text-white":"text-black"} border-white hover:bg-white/10 hover:text-white font-semibold px-6 md:px-8 w-full sm:w-auto`}
                   hoverEffect="pulse"
                   iconAnimation={true}
                 >
