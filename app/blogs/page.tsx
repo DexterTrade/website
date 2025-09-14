@@ -1,9 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Calendar, Clock, User, Search, Tag } from "lucide-react"
+import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 export const metadata = {
   title: "Blog | TechMaster Solutions",
@@ -28,49 +27,40 @@ export default function BlogPage() {
       </section>
 
       {/* Search and Categories */}
-      <section className="py-8 md:py-12 bg-white border-b">
+      <section className="py-8 md:py-12 bg-background border-b border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-between mb-6">
-              <div className="relative flex-1 max-w-md w-full">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <Input
-                  placeholder="Search articles..."
-                  className="pl-10 bg-gray-50 border-gray-200 focus:border-blue-500"
-                />
-              </div>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-end">
-                {blogCategories.map((category, index) => (
-                  <Button
-                    key={index}
-                    variant={index === 0 ? "default" : "outline"}
-                    size="sm"
-                    className={
-                      index === 0
-                        ? "bg-blue-500 hover:bg-blue-600"
-                        : "border-gray-200 hover:border-blue-500 hover:text-blue-600"
-                    }
-                  >
-                    {category}
-                  </Button>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {blogCategories.map((category, index) => (
+                <Button
+                  key={index}
+                  variant={index === 0 ? "default" : "outline"}
+                  size="sm"
+                  className={
+                    index === 0
+                      ? "bg-blue-500 hover:bg-blue-600 text-white"
+                      : "border-border hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950"
+                  }
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Post */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
-              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-400 rounded-full text-sm font-medium mb-4">
                 Featured Article
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">Latest Insights</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Latest Insights</h2>
             </div>
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-64 md:h-full">
                   <Image
@@ -82,7 +72,7 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="p-6 md:p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
                       {featuredPost.date}
@@ -96,15 +86,17 @@ export default function BlogPage() {
                       {featuredPost.author}
                     </div>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">{featuredPost.title}</h3>
-                  <p className="text-gray-700 mb-6 text-sm sm:text-base">{featuredPost.excerpt}</p>
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-foreground">{featuredPost.title}</h3>
+                  <p className="text-muted-foreground mb-6 text-sm sm:text-base">{featuredPost.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Tag className="h-4 w-4 text-blue-500" />
-                      <span className="text-sm text-blue-600 font-medium">{featuredPost.category}</span>
+                      <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                        {featuredPost.category}
+                      </span>
                     </div>
-                    <Link href={`/blog/${featuredPost.slug}`}>
-                      <Button className="bg-blue-500 hover:bg-blue-600">
+                    <Link href={`/blogs/${featuredPost.slug}`}>
+                      <Button className="bg-blue-500 hover:bg-blue-600 text-white">
                         Read More
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -118,12 +110,12 @@ export default function BlogPage() {
       </section>
 
       {/* Recent Posts */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Recent Articles</h2>
-              <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">Recent Articles</h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore our latest articles covering technology trends, development tips, marketing strategies, and
                 cloud innovations.
               </p>
@@ -132,7 +124,7 @@ export default function BlogPage() {
               {blogPosts.map((post, index) => (
                 <article
                   key={index}
-                  className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group"
+                  className="bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group border border-border"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -149,7 +141,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-4 text-xs text-gray-600 mb-3">
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
                         {post.date}
@@ -159,15 +151,21 @@ export default function BlogPage() {
                         {post.readTime}
                       </div>
                     </div>
-                    <h3 className="text-lg font-bold mb-3 group-hover:text-blue-600 transition-colors">{post.title}</h3>
-                    <p className="text-gray-700 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                    <h3 className="text-lg font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-foreground">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs text-gray-600">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <User className="h-3 w-3" />
                         {post.author}
                       </div>
-                      <Link href={`/blog/${post.slug}`}>
-                        <Button size="sm" variant="ghost" className="text-blue-600 hover:text-blue-700 p-0">
+                      <Link href={`/blogs/${post.slug}`}>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 p-0"
+                        >
                           Read More
                           <ArrowRight className="ml-1 h-3 w-3" />
                         </Button>
@@ -182,7 +180,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-12 md:py-20 bg-gray-900 text-white">
+      <section className="py-12 md:py-20 bg-gray-900 dark:bg-gray-950 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
@@ -191,9 +189,9 @@ export default function BlogPage() {
               delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
+              <input
                 placeholder="Enter your email"
-                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-400 focus:border-blue-500"
+                className="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder:text-gray-400 focus:border-blue-500 focus:outline-none"
               />
               <Button className="bg-blue-500 hover:bg-blue-600 whitespace-nowrap">Subscribe Now</Button>
             </div>

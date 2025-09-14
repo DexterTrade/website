@@ -40,14 +40,16 @@ export default function MarketingPage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Marketing Services
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Complete Digital Marketing Solutions</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Complete Digital Marketing Solutions
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
               From strategy development to campaign execution, we deliver comprehensive marketing solutions that drive
               engagement and growth.
             </p>
@@ -56,13 +58,13 @@ export default function MarketingPage() {
             {marketingServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group text-center"
+                className="bg-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group text-center border"
               >
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 transition-colors">
-                  <service.icon className="h-8 w-8 text-blue-600" />
+                <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors">
+                  <service.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-700 text-sm sm:text-base">{service.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">{service.description}</p>
               </div>
             ))}
           </div>
@@ -70,25 +72,27 @@ export default function MarketingPage() {
       </section>
 
       {/* Marketing Strategy */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
             <div>
-              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
                 Our Approach
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Data-Driven Marketing Strategy</h2>
-              <p className="text-base md:text-lg text-gray-700 mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                Data-Driven Marketing Strategy
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-8">
                 We combine creativity with analytics to develop marketing strategies that resonate with your audience
                 and deliver measurable ROI.
               </p>
               <div className="space-y-4">
                 {strategyFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-base md:text-lg">{feature.title}</h3>
-                      <p className="text-gray-700 text-sm sm:text-base">{feature.description}</p>
+                      <h3 className="font-semibold text-base md:text-lg text-foreground">{feature.title}</h3>
+                      <p className="text-muted-foreground text-sm sm:text-base">{feature.description}</p>
                     </div>
                   </div>
                 ))}
@@ -108,25 +112,25 @@ export default function MarketingPage() {
       </section>
 
       {/* Marketing Channels */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Marketing Channels
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Multi-Channel Marketing</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">Multi-Channel Marketing</h2>
+            <p className="text-base md:text-lg text-muted-foreground">
               We leverage multiple marketing channels to maximize your reach and ensure your message connects with your
               target audience.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {marketingChannels.map((channel, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold mb-3 text-blue-600">{channel.name}</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
+              <div key={index} className="bg-card rounded-2xl p-6 text-center hover:shadow-md transition-shadow border">
+                <h3 className="text-lg font-bold mb-3 text-blue-600 dark:text-blue-400">{channel.name}</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   {channel.platforms.map((platform, idx) => (
-                    <li key={idx} className="bg-white rounded-lg p-2">
+                    <li key={idx} className="bg-background rounded-lg p-2 border">
                       {platform}
                     </li>
                   ))}
@@ -138,39 +142,121 @@ export default function MarketingPage() {
       </section>
 
       {/* Results Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Proven Results
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Marketing That Delivers</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">Marketing That Delivers</h2>
+            <p className="text-base md:text-lg text-muted-foreground">
               Our marketing campaigns consistently deliver impressive results across various industries and business
               sizes.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
             {marketingResults.map((result, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-sm">
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{result.metric}</div>
-                <div className="text-sm text-gray-600 mb-2">{result.description}</div>
-                <div className="text-xs text-gray-500">{result.timeframe}</div>
+              <div key={index} className="bg-card rounded-2xl p-6 text-center shadow-sm border">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                  {result.metric}
+                </div>
+                <div className="text-sm text-muted-foreground mb-2">{result.description}</div>
+                <div className="text-xs text-muted-foreground/70">{result.timeframe}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 md:py-20 bg-white">
+      {/* Subscription Plans */}
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
+              Subscription Plans
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Choose Your Marketing Plan
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
+              Select the perfect marketing package that fits your business needs and budget. All plans include dedicated
+              support and monthly reporting.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+            {subscriptionPlans.map((plan, index) => (
+              <div
+                key={index}
+                className={`rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 ${
+                  plan.popular ? "bg-blue-50 dark:bg-blue-950/30 border-2 border-blue-500 relative" : "bg-card border"
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold mb-2 text-foreground">{plan.name}</h3>
+                  <div className="mb-4">
+                    <span className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400">
+                      ${plan.price}
+                    </span>
+                    <span className="text-muted-foreground">/month</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm">{plan.description}</p>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-muted-foreground text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact" className="block">
+                  <Button
+                    className={`w-full ${
+                      plan.popular
+                        ? "bg-blue-500 hover:bg-blue-600 text-white"
+                        : "bg-gray-900 dark:bg-gray-100 hover:bg-gray-800 dark:hover:bg-gray-200 text-white dark:text-gray-900"
+                    }`}
+                  >
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground text-sm">
+              Need a custom solution?{" "}
+              <Link
+                href="/contact"
+                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
+              >
+                Contact us
+              </Link>{" "}
+              for enterprise pricing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-12 md:py-20 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Our Process
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Strategic Marketing Process</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Strategic Marketing Process
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
               Our proven methodology ensures every campaign is strategically planned, expertly executed, and
               continuously optimized.
             </p>
@@ -178,12 +264,12 @@ export default function MarketingPage() {
           <div className="max-w-5xl mx-auto">
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
               {marketingProcess.map((step, index) => (
-                <div key={index} className="bg-gray-50 rounded-2xl p-6 text-center">
-                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <span className="text-blue-700 font-bold text-lg">{index + 1}</span>
+                <div key={index} className="bg-card rounded-2xl p-6 text-center border">
+                  <div className="bg-blue-100 dark:bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <span className="text-blue-700 dark:text-blue-300 font-bold text-lg">{index + 1}</span>
                   </div>
-                  <h3 className="text-lg font-bold mb-3">{step.title}</h3>
-                  <p className="text-gray-700 text-sm">{step.description}</p>
+                  <h3 className="text-lg font-bold mb-3 text-foreground">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -192,10 +278,10 @@ export default function MarketingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gray-900 text-white">
+      <section className="py-12 md:py-20 bg-gray-900 dark:bg-gray-950 text-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to Amplify Your Brand?</h2>
-          <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-gray-300 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
             Let's create a marketing strategy that drives real results and grows your business. Get started with a free
             consultation today.
           </p>
@@ -341,5 +427,74 @@ const marketingProcess = [
   {
     title: "Optimize",
     description: "Monitoring performance and optimizing for better results.",
+  },
+]
+
+const subscriptionPlans = [
+  {
+    name: "Starter",
+    price: "499",
+    description: "Perfect for small businesses getting started with digital marketing",
+    popular: false,
+    features: [
+      "Social media management (2 platforms)",
+      "5 posts per week",
+      "Basic content creation",
+      "Monthly performance report",
+      "Email support",
+      "Basic SEO optimization",
+    ],
+  },
+  {
+    name: "Growth",
+    price: "999",
+    description: "Ideal for growing businesses looking to expand their reach",
+    popular: true,
+    features: [
+      "Social media management (4 platforms)",
+      "10 posts per week",
+      "Professional content creation",
+      "Google Ads management ($500 ad spend)",
+      "Bi-weekly performance reports",
+      "Priority email & phone support",
+      "Advanced SEO optimization",
+      "Basic influencer outreach",
+    ],
+  },
+  {
+    name: "Professional",
+    price: "1999",
+    description: "Comprehensive marketing for established businesses",
+    popular: false,
+    features: [
+      "Social media management (all platforms)",
+      "15 posts per week",
+      "Premium content & video creation",
+      "Google & Facebook Ads ($1000 ad spend)",
+      "Weekly performance reports",
+      "Dedicated account manager",
+      "Advanced SEO & SEM",
+      "Influencer partnerships",
+      "Email marketing campaigns",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "3999",
+    description: "Full-scale marketing solutions for large organizations",
+    popular: false,
+    features: [
+      "Complete social media management",
+      "Daily content creation",
+      "Professional video production",
+      "Multi-platform advertising ($2500 ad spend)",
+      "Real-time analytics dashboard",
+      "24/7 dedicated support team",
+      "Complete SEO/SEM management",
+      "Celebrity influencer access",
+      "Advanced email automation",
+      "Custom landing pages",
+      "Conversion rate optimization",
+    ],
   },
 ]

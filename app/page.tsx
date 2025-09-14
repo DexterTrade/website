@@ -2,7 +2,23 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, ChevronRight, Eye, Lightbulb, Code, Smartphone, Cloud, Target } from "lucide-react"
+import {
+  ArrowRight,
+  CheckCircle,
+  ChevronRight,
+  Eye,
+  Lightbulb,
+  Code,
+  Smartphone,
+  Cloud,
+  Target,
+  Star,
+  Quote,
+  ChevronLeft,
+  Calendar,
+  User,
+  ArrowUpRight,
+} from "lucide-react"
 import { motion } from "framer-motion"
 import { AnimatedButton } from "@/components/ui/animated-button"
 import { HoverButton } from "@/components/ui/hover-button"
@@ -12,10 +28,106 @@ import { ScaleIn } from "@/components/animations/scale-in"
 import { HoverCard } from "@/components/animations/hover-card"
 import { CountUp } from "@/components/animations/count-up"
 import { ScrollProgress } from "@/components/animations/scroll-progress"
-import { useTheme } from "next-themes"
+import { useState, useEffect } from "react"
 
 export default function Home() {
-  const { theme } = useTheme();
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const services = [
+    {
+      title: "E-commerce Solutions",
+      description: "Custom online stores with secure payment processing and inventory management",
+      icon: <Smartphone className="h-8 w-8" />,
+      image: "/modern-ecommerce-dashboard.png",
+      link: "/services/ecommerce",
+    },
+    {
+      title: "Software Development",
+      description: "Web applications, mobile apps, and enterprise software solutions",
+      icon: <Code className="h-8 w-8" />,
+      image: "/software-development-team.png",
+      link: "/services/software",
+    },
+    {
+      title: "Media Marketing",
+      description: "Digital marketing campaigns and social media management",
+      icon: <Target className="h-8 w-8" />,
+      image: "/digital-marketing-campaign.png",
+      link: "/services/marketing",
+    },
+    {
+      title: "Cloud Services",
+      description: "Cloud migration, infrastructure management, and optimization",
+      icon: <Cloud className="h-8 w-8" />,
+      image: "/cloud-infrastructure-diagram.png",
+      link: "/services/cloud",
+    },
+  ]
+
+  const reviews = [
+    {
+      name: "Sarah Johnson",
+      company: "TechStart Inc.",
+      rating: 5,
+      review:
+        "Outstanding service! They transformed our outdated e-commerce platform into a modern, high-performing solution that increased our sales by 150%.",
+      avatar: "/professional-woman-diverse.png",
+    },
+    {
+      name: "Michael Chen",
+      company: "Digital Dynamics",
+      rating: 5,
+      review:
+        "The team's expertise in cloud migration saved us thousands in infrastructure costs while improving our system performance dramatically.",
+      avatar: "/professional-man.png",
+    },
+    {
+      name: "Emily Rodriguez",
+      company: "Growth Marketing Co.",
+      rating: 5,
+      review:
+        "Their media marketing strategies helped us reach our target audience more effectively, resulting in a 200% increase in qualified leads.",
+      avatar: "/marketing-professional.png",
+    },
+  ]
+
+  const blogPosts = [
+    {
+      title: "The Future of E-commerce: AI-Powered Personalization",
+      excerpt:
+        "Discover how artificial intelligence is revolutionizing online shopping experiences and driving customer engagement.",
+      image: "/blog-ai-ecommerce.png",
+      date: "Dec 15, 2024",
+      author: "Alex Thompson",
+      slug: "future-ecommerce-ai-personalization",
+    },
+    {
+      title: "Cloud Migration Best Practices for 2025",
+      excerpt:
+        "Essential strategies and considerations for successfully migrating your business infrastructure to the cloud.",
+      image: "/blog-cloud-migration.png",
+      date: "Dec 12, 2024",
+      author: "Maria Garcia",
+      slug: "cloud-migration-best-practices-2025",
+    },
+    {
+      title: "Social Media Marketing Trends to Watch",
+      excerpt:
+        "Stay ahead of the curve with the latest social media marketing strategies and emerging platform features.",
+      image: "/blog-social-media-trends.png",
+      date: "Dec 10, 2024",
+      author: "David Kim",
+      slug: "social-media-marketing-trends-2025",
+    },
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % services.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [services.length])
+
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollProgress />
@@ -51,7 +163,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-block px-4 py-2 bg-blue-500/90 text-white rounded-full text-sm font-medium mb-4"
+                className="inline-block px-4 py-2 bg-blue-500/90 text-white rounded-full text-sm font-medium mb-4 md:mb-4"
               >
                 Premier Technology Services
               </motion.div>
@@ -81,7 +193,7 @@ export default function Home() {
                   <HoverButton
                     size="lg"
                     variant="outline"
-                    className={`${theme==="dark"?"text-white":"text-black"} border-white hover:bg-white/20 hover:text-white font-semibold px-6 sm:px-8 w-full sm:w-auto backdrop-blur-sm`}
+                    className="text-white border-white bg-gray-900/80 hover:bg-white hover:text-gray-900 font-semibold px-6 sm:px-8 w-full sm:w-auto backdrop-blur-sm"
                     hoverEffect="glow"
                     rippleColor="rgba(255, 255, 255, 0.3)"
                   >
@@ -232,6 +344,103 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Slider Section */}
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-400 rounded-full text-sm font-medium mb-3 md:mb-4">
+                Our Services
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white">
+                Comprehensive Technology Solutions
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                From e-commerce platforms to cloud infrastructure, we deliver cutting-edge solutions tailored to your
+                business needs.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="relative max-w-6xl mx-auto">
+            <div className="overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-xl">
+              <div className="relative h-[400px] md:h-[500px]">
+                {services.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-500 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <div className="grid md:grid-cols-2 h-full">
+                      <div className="p-8 md:p-12 flex flex-col justify-center">
+                        <div className="flex items-center mb-6">
+                          <div className="bg-blue-100 dark:bg-blue-900 w-12 h-12 rounded-full flex items-center justify-center mr-4 text-blue-600 dark:text-blue-400">
+                            {service.icon}
+                          </div>
+                          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                            {service.title}
+                          </h3>
+                        </div>
+                        <p className="text-gray-700 dark:text-gray-300 text-lg mb-8 leading-relaxed">
+                          {service.description}
+                        </p>
+                        <Link href={service.link}>
+                          <AnimatedButton
+                            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-fit"
+                            hoverEffect="shine"
+                          >
+                            Learn More
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </AnimatedButton>
+                        </Link>
+                      </div>
+                      <div className="relative hidden md:block">
+                        <Image
+                          src={service.image || "/placeholder.svg"}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Slider Controls */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentSlide
+                      ? "bg-blue-500"
+                      : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + services.length) % services.length)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % services.length)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-10 md:py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
@@ -292,6 +501,148 @@ export default function Home() {
               </HoverCard>
             </div>
           </StaggerIn>
+        </div>
+      </section>
+
+      {/* Customer Reviews Section */}
+      <section className="py-12 md:py-20 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-400 rounded-full text-sm font-medium mb-3 md:mb-4">
+                Client Testimonials
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white">
+                What Our Clients Say
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                Don't just take our word for it. Here's what our satisfied clients have to say about our services.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {reviews.map((review, index) => (
+              <FadeIn key={index} delay={index * 0.2}>
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative">
+                  <div className="absolute -top-4 left-6">
+                    <div className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center">
+                      <Quote className="h-4 w-4 text-white" />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center mb-4 pt-4">
+                    <Image
+                      src={review.avatar || "/placeholder.svg"}
+                      alt={review.name}
+                      width={60}
+                      height={60}
+                      className="rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">{review.name}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{review.company}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex mb-4">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">"{review.review}"</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <ScaleIn delay={0.6}>
+            <div className="text-center mt-12">
+              <Link href="/contact">
+                <AnimatedButton className="bg-blue-500 hover:bg-blue-600 text-white font-semibold" hoverEffect="pulse">
+                  Start Your Success Story
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </AnimatedButton>
+              </Link>
+            </div>
+          </ScaleIn>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-12 md:py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-400 rounded-full text-sm font-medium mb-3 md:mb-4">
+                Latest Insights
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white">
+                From Our Blog
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                Stay updated with the latest trends, insights, and best practices in technology and digital
+                transformation.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {blogPosts.map((post, index) => (
+              <FadeIn key={index} delay={index * 0.2}>
+                <article className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                      <Calendar className="h-4 w-4 mr-2" />
+                      <span>{post.date}</span>
+                      <span className="mx-2">•</span>
+                      <User className="h-4 w-4 mr-2" />
+                      <span>{post.author}</span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
+                      {post.title}
+                    </h3>
+
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{post.excerpt}</p>
+
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
+                    >
+                      Read More
+                      <ArrowUpRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </div>
+                </article>
+              </FadeIn>
+            ))}
+          </div>
+
+          <ScaleIn delay={0.6}>
+            <div className="text-center mt-12">
+              <Link href="/blog">
+                <AnimatedButton
+                  variant="outline"
+                  className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-gray-900 font-semibold"
+                  hoverEffect="shine"
+                >
+                  View All Articles
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </AnimatedButton>
+              </Link>
+            </div>
+          </ScaleIn>
         </div>
       </section>
 
@@ -361,7 +712,7 @@ export default function Home() {
                 <AnimatedButton
                   size="lg"
                   variant="outline"
-                  className={`${theme==="dark"?"text-white":"text-black"} border-white hover:bg-white/10 hover:text-white font-semibold px-6 md:px-8 w-full sm:w-auto`}
+                  className="text-white border-white hover:bg-white/10 hover:text-white font-semibold px-6 md:px-8 w-full sm:w-auto"
                   hoverEffect="pulse"
                   iconAnimation={true}
                 >

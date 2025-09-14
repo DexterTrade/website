@@ -40,14 +40,16 @@ export default function SoftwarePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Development Services
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Comprehensive Software Solutions</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Comprehensive Software Solutions
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
               From web applications to enterprise software, we deliver scalable solutions that meet your unique business
               requirements.
             </p>
@@ -56,13 +58,13 @@ export default function SoftwarePage() {
             {softwareServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group text-center"
+                className="bg-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group text-center border"
               >
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 transition-colors">
-                  <service.icon className="h-8 w-8 text-blue-600" />
+                <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors">
+                  <service.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-700 text-sm sm:text-base">{service.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">{service.description}</p>
               </div>
             ))}
           </div>
@@ -70,14 +72,16 @@ export default function SoftwarePage() {
       </section>
 
       {/* Development Process */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Our Process
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Agile Development Methodology</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Agile Development Methodology
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
               We follow industry best practices with agile development to ensure quality, transparency, and timely
               delivery.
             </p>
@@ -85,12 +89,12 @@ export default function SoftwarePage() {
           <div className="max-w-5xl mx-auto">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {developmentProcess.map((step, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-sm text-center">
-                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <span className="text-blue-700 font-bold text-lg">{index + 1}</span>
+                <div key={index} className="bg-card rounded-2xl p-6 shadow-sm text-center border">
+                  <div className="bg-blue-100 dark:bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <span className="text-blue-700 dark:text-blue-300 font-bold text-lg">{index + 1}</span>
                   </div>
-                  <h3 className="text-lg font-bold mb-3">{step.title}</h3>
-                  <p className="text-gray-700 text-sm">{step.description}</p>
+                  <h3 className="text-lg font-bold mb-3 text-foreground">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -99,14 +103,16 @@ export default function SoftwarePage() {
       </section>
 
       {/* Technologies */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Technology Stack
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Modern Development Technologies</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Modern Development Technologies
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
               We use the latest frameworks, languages, and tools to build robust, scalable, and maintainable software
               solutions.
             </p>
@@ -115,10 +121,10 @@ export default function SoftwarePage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {Object.entries(techStack).map(([category, techs]) => (
                 <div key={category} className="text-center">
-                  <h3 className="text-lg font-bold mb-4 text-blue-600">{category}</h3>
+                  <h3 className="text-lg font-bold mb-4 text-blue-600 dark:text-blue-400">{category}</h3>
                   <div className="space-y-2">
                     {techs.map((tech, index) => (
-                      <div key={index} className="bg-gray-50 rounded-lg p-3 text-sm font-medium">
+                      <div key={index} className="bg-card rounded-lg p-3 text-sm font-medium border text-foreground">
                         {tech}
                       </div>
                     ))}
@@ -131,7 +137,7 @@ export default function SoftwarePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
@@ -144,21 +150,23 @@ export default function SoftwarePage() {
               />
             </div>
             <div>
-              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
                 Why Choose Us
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Quality-Driven Development</h2>
-              <p className="text-base md:text-lg text-gray-700 mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                Quality-Driven Development
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-8">
                 Our experienced development team delivers high-quality software solutions with a focus on performance,
                 security, and scalability.
               </p>
               <div className="space-y-4">
                 {qualityFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-base md:text-lg">{feature.title}</h3>
-                      <p className="text-gray-700 text-sm sm:text-base">{feature.description}</p>
+                      <h3 className="font-semibold text-base md:text-lg text-foreground">{feature.title}</h3>
+                      <p className="text-muted-foreground text-sm sm:text-base">{feature.description}</p>
                     </div>
                   </div>
                 ))}
@@ -169,10 +177,10 @@ export default function SoftwarePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gray-900 text-white">
+      <section className="py-12 md:py-20 bg-gray-900 dark:bg-gray-950 text-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to Build Your Software Solution?</h2>
-          <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-gray-300 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
             Let's discuss your project requirements and create a custom software solution that drives your business
             success.
           </p>

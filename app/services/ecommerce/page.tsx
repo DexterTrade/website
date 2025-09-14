@@ -1,38 +1,38 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Cloud, Server, Shield, Zap, Database, Settings } from "lucide-react"
+import { ArrowRight, CheckCircle, ShoppingCart, CreditCard, Smartphone, BarChart3, Shield, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
-  title: "Cloud Services | TechMaster Solutions",
+  title: "E-commerce Solutions | TechMaster Solutions",
   description:
-    "Cloud infrastructure, migration services, scalable hosting solutions, and cloud security for modern businesses.",
+    "Custom e-commerce development, online store creation, payment integration, and digital commerce solutions to grow your business online.",
 }
 
-export default function CloudPage() {
+export default function EcommercePage() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative h-[400px] sm:h-[500px] w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <Image
-          src="/cloud-computing-servers.png"
-          alt="Cloud services infrastructure"
+          src="/modern-ecommerce-devices.png"
+          alt="E-commerce solutions"
           fill
           className="object-cover"
           priority
           sizes="100vw"
         />
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">Cloud Services</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">E-commerce Solutions</h1>
           <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl md:max-w-3xl mb-6 md:mb-8">
-            Scalable cloud infrastructure, seamless migration services, and enterprise-grade security solutions to power
-            your digital transformation.
+            Transform your business with custom e-commerce platforms designed to maximize sales, enhance user
+            experience, and drive growth.
           </p>
           <Link href="/contact">
             <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8">
-              Migrate to Cloud
+              Start Your Store
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
@@ -40,86 +40,57 @@ export default function CloudPage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-              Cloud Solutions
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
+              Our E-commerce Services
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Comprehensive Cloud Services</h2>
-            <p className="text-base md:text-lg text-gray-700">
-              From cloud migration to ongoing management, we provide end-to-end cloud solutions that scale with your
-              business needs.
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Complete E-commerce Solutions
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
+              From custom online stores to enterprise e-commerce platforms, we deliver solutions that drive sales and
+              enhance customer experience.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-            {cloudServices.map((service, index) => (
+            {ecommerceServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group text-center"
+                className="bg-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group text-center border"
               >
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 transition-colors">
-                  <service.icon className="h-8 w-8 text-blue-600" />
+                <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors">
+                  <service.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-700 text-sm sm:text-base">{service.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Cloud Platforms */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-              Cloud Platforms
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Multi-Cloud Expertise</h2>
-            <p className="text-base md:text-lg text-gray-700">
-              We work with leading cloud providers to deliver the best solutions for your specific requirements and
-              budget.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {cloudPlatforms.map((platform, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm text-center">
-                <h3 className="text-xl font-bold mb-4 text-blue-600">{platform.name}</h3>
-                <p className="text-gray-700 text-sm mb-4">{platform.description}</p>
-                <div className="space-y-2">
-                  {platform.services.map((service, idx) => (
-                    <div key={idx} className="bg-gray-50 rounded-lg p-2 text-sm">
-                      {service}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-12 md:py-20 bg-white">
+      {/* Features Section */}
+      <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
             <div>
-              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-                Cloud Benefits
+              <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
+                Platform Features
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Why Choose Cloud?</h2>
-              <p className="text-base md:text-lg text-gray-700 mb-8">
-                Cloud computing offers unparalleled flexibility, scalability, and cost-effectiveness for modern
-                businesses of all sizes.
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">Built for Success</h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-8">
+                Our e-commerce platforms come with everything you need to succeed online, from inventory management to
+                advanced analytics.
               </p>
               <div className="space-y-4">
-                {cloudBenefits.map((benefit, index) => (
+                {platformFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-base md:text-lg">{benefit.title}</h3>
-                      <p className="text-gray-700 text-sm sm:text-base">{benefit.description}</p>
+                      <h3 className="font-semibold text-base md:text-lg text-foreground">{feature.title}</h3>
+                      <p className="text-muted-foreground text-sm sm:text-base">{feature.description}</p>
                     </div>
                   </div>
                 ))}
@@ -127,8 +98,8 @@ export default function CloudPage() {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/cloud-infrastructure-diagram.png"
-                alt="Cloud infrastructure diagram"
+                src="/modern-ecommerce-dashboard.png"
+                alt="E-commerce platform dashboard"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -138,60 +109,25 @@ export default function CloudPage() {
         </div>
       </section>
 
-      {/* Migration Process */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      {/* Technologies */}
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-              Migration Process
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
+              Technologies We Use
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Seamless Cloud Migration</h2>
-            <p className="text-base md:text-lg text-gray-700">
-              Our proven migration methodology ensures minimal downtime and maximum security during your transition to
-              the cloud.
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Cutting-Edge E-commerce Stack
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground">
+              We leverage the latest technologies and platforms to build scalable, secure, and high-performing
+              e-commerce solutions.
             </p>
           </div>
-          <div className="max-w-6xl mx-auto">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-4">
-              {migrationProcess.map((step, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-sm">
-                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <span className="text-blue-700 font-bold text-lg">{index + 1}</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-3">{step.title}</h3>
-                  <p className="text-gray-700 text-sm">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Security & Compliance */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-              Security & Compliance
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Enterprise-Grade Security</h2>
-            <p className="text-base md:text-lg text-gray-700">
-              We implement comprehensive security measures and ensure compliance with industry standards to protect your
-              data and applications.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {securityFeatures.map((feature, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6 text-center">
-                <h3 className="text-lg font-bold mb-3 text-blue-600">{feature.title}</h3>
-                <p className="text-gray-700 text-sm mb-4">{feature.description}</p>
-                <div className="space-y-1">
-                  {feature.items.map((item, idx) => (
-                    <div key={idx} className="bg-white rounded-lg p-2 text-xs">
-                      {item}
-                    </div>
-                  ))}
-                </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {technologies.map((tech, index) => (
+              <div key={index} className="bg-card rounded-xl p-4 text-center hover:shadow-md transition-shadow border">
+                <h3 className="font-semibold text-sm sm:text-base text-foreground">{tech}</h3>
               </div>
             ))}
           </div>
@@ -199,17 +135,16 @@ export default function CloudPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gray-900 text-white">
+      <section className="py-12 md:py-20 bg-gray-900 dark:bg-gray-950 text-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to Move to the Cloud?</h2>
-          <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-8">
-            Start your cloud journey with a free assessment and discover how cloud services can transform your business
-            operations.
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to Launch Your Online Store?</h2>
+          <p className="text-gray-300 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
+            Get started with a free consultation and discover how our e-commerce solutions can transform your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8 w-full sm:w-auto">
-                Get Cloud Assessment
+                Get Free Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -219,7 +154,7 @@ export default function CloudPage() {
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto bg-transparent"
               >
-                View Success Stories
+                View Our Work
               </Button>
             </Link>
           </div>
@@ -229,126 +164,74 @@ export default function CloudPage() {
   )
 }
 
-const cloudServices = [
+const ecommerceServices = [
   {
-    title: "Cloud Migration",
-    description: "Seamless migration of your applications and data to the cloud with minimal downtime.",
-    icon: Cloud,
+    title: "Custom Online Stores",
+    description: "Tailored e-commerce websites built from scratch to match your brand and business requirements.",
+    icon: ShoppingCart,
   },
   {
-    title: "Infrastructure Management",
-    description: "Complete cloud infrastructure setup, monitoring, and ongoing management services.",
-    icon: Server,
+    title: "Payment Integration",
+    description:
+      "Secure payment gateways supporting multiple payment methods including cards, digital wallets, and more.",
+    icon: CreditCard,
   },
   {
-    title: "Cloud Security",
-    description: "Advanced security measures including encryption, access controls, and compliance management.",
+    title: "Mobile Commerce",
+    description: "Responsive designs and mobile apps that provide seamless shopping experiences across all devices.",
+    icon: Smartphone,
+  },
+  {
+    title: "Analytics & Reporting",
+    description: "Comprehensive analytics dashboards to track sales, customer behavior, and business performance.",
+    icon: BarChart3,
+  },
+  {
+    title: "Security & Compliance",
+    description: "Enterprise-grade security measures and compliance with industry standards like PCI DSS.",
     icon: Shield,
   },
   {
     title: "Performance Optimization",
-    description: "Continuous monitoring and optimization to ensure peak performance and cost efficiency.",
+    description: "Fast-loading stores optimized for search engines and conversion rate optimization.",
     icon: Zap,
   },
+]
+
+const platformFeatures = [
   {
-    title: "Data Management",
-    description: "Secure data storage, backup solutions, and disaster recovery planning in the cloud.",
-    icon: Database,
+    title: "Inventory Management",
+    description: "Real-time inventory tracking, automated stock alerts, and multi-warehouse support.",
   },
   {
-    title: "DevOps & Automation",
-    description: "CI/CD pipelines, automated deployments, and infrastructure as code implementation.",
-    icon: Settings,
+    title: "Order Processing",
+    description: "Streamlined order management with automated workflows and shipping integration.",
+  },
+  {
+    title: "Customer Management",
+    description: "Comprehensive customer profiles, order history, and personalized shopping experiences.",
+  },
+  {
+    title: "Marketing Tools",
+    description: "Built-in SEO tools, email marketing integration, and promotional campaign management.",
+  },
+  {
+    title: "Multi-channel Selling",
+    description: "Sell across multiple platforms including social media, marketplaces, and your website.",
   },
 ]
 
-const cloudPlatforms = [
-  {
-    name: "Amazon Web Services",
-    description: "Comprehensive cloud platform with extensive service offerings and global infrastructure.",
-    services: ["EC2", "S3", "RDS", "Lambda", "CloudFront"],
-  },
-  {
-    name: "Microsoft Azure",
-    description: "Enterprise-focused cloud platform with strong integration with Microsoft ecosystem.",
-    services: ["Virtual Machines", "Blob Storage", "SQL Database", "Functions", "CDN"],
-  },
-  {
-    name: "Google Cloud Platform",
-    description: "Data and analytics-focused cloud platform with advanced AI and machine learning capabilities.",
-    services: ["Compute Engine", "Cloud Storage", "BigQuery", "Cloud Functions", "Firebase"],
-  },
-]
-
-const cloudBenefits = [
-  {
-    title: "Cost Optimization",
-    description: "Reduce infrastructure costs with pay-as-you-use pricing and eliminate hardware maintenance.",
-  },
-  {
-    title: "Scalability",
-    description: "Instantly scale resources up or down based on demand without hardware limitations.",
-  },
-  {
-    title: "Reliability",
-    description: "99.9% uptime guarantee with built-in redundancy and disaster recovery capabilities.",
-  },
-  {
-    title: "Global Reach",
-    description: "Deploy applications globally with content delivery networks and edge locations.",
-  },
-  {
-    title: "Enhanced Security",
-    description: "Enterprise-grade security with encryption, compliance certifications, and regular updates.",
-  },
-]
-
-const migrationProcess = [
-  {
-    title: "Assessment",
-    description: "Evaluate current infrastructure and applications.",
-  },
-  {
-    title: "Planning",
-    description: "Develop migration strategy and timeline.",
-  },
-  {
-    title: "Design",
-    description: "Architect cloud infrastructure and services.",
-  },
-  {
-    title: "Migration",
-    description: "Execute phased migration with minimal downtime.",
-  },
-  {
-    title: "Testing",
-    description: "Comprehensive testing and validation.",
-  },
-  {
-    title: "Optimization",
-    description: "Fine-tune performance and costs.",
-  },
-]
-
-const securityFeatures = [
-  {
-    title: "Data Protection",
-    description: "Comprehensive data security measures",
-    items: ["Encryption at Rest", "Encryption in Transit", "Key Management", "Data Loss Prevention"],
-  },
-  {
-    title: "Access Control",
-    description: "Identity and access management",
-    items: ["Multi-Factor Auth", "Role-Based Access", "Single Sign-On", "Identity Federation"],
-  },
-  {
-    title: "Compliance",
-    description: "Industry standard compliance",
-    items: ["SOC 2", "HIPAA", "GDPR", "PCI DSS"],
-  },
-  {
-    title: "Monitoring",
-    description: "24/7 security monitoring",
-    items: ["Threat Detection", "Security Logs", "Incident Response", "Vulnerability Scanning"],
-  },
+const technologies = [
+  "Shopify Plus",
+  "WooCommerce",
+  "Magento",
+  "React.js",
+  "Next.js",
+  "Node.js",
+  "Stripe",
+  "PayPal",
+  "AWS",
+  "Google Cloud",
+  "MongoDB",
+  "PostgreSQL",
 ]
