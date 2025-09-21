@@ -165,6 +165,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       isActive={pathname === "/services/cloud"}
                       onClick={onClose}
                     />
+                    <MobileSubNavItem
+                      href="/services/ai-integration"
+                      label="AI Integration"
+                      isActive={pathname === "/services/ai-integration"}
+                      onClick={onClose}
+                    />
                   </motion.div>
                 </motion.div>
 
@@ -185,11 +191,19 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 />
 
                 <MobileNavItem
+                  href="/blog"
+                  label="Blog"
+                  isActive={pathname === "/blog"}
+                  onClick={onClose}
+                  delay={0.5}
+                />
+
+                <MobileNavItem
                   href="/contact"
                   label="Contact"
                   isActive={pathname === "/contact"}
                   onClick={onClose}
-                  delay={0.5}
+                  delay={0.6}
                 />
               </nav>
 

@@ -115,7 +115,7 @@ export function Navbar() {
         } safe-top`}
         initial="visible"
         animate={shouldShowNavbar ? "visible" : "hidden"}
-        variants={navVariants as any}
+        variants={navVariants}
       >
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 max-w-[1920px]">
           <div className="flex h-14 sm:h-16 md:h-18 lg:h-20 items-center justify-between">
@@ -165,6 +165,7 @@ export function Navbar() {
                     { href: "/services/software", label: "Software Development" },
                     { href: "/services/marketing", label: "Media Marketing" },
                     { href: "/services/cloud", label: "Cloud Services" },
+                    { href: "/services/ai-integration", label: "AI Integration" },
                   ]}
                   pathname={pathname}
                   onHover={() => setHoveredItem("services")}
@@ -182,21 +183,21 @@ export function Navbar() {
                 />
 
                 <NavItem
-                  href="/blogs"
-                  label="Blogs"
-                  isActive={pathname === "/blogs"}
-                  onHover={() => setHoveredItem("blogs")}
-                  onLeave={() => setHoveredItem(null)}
-                  isHovered={hoveredItem === "blogs"}
-                />
-
-                <NavItem
                   href="/about"
                   label="About Us"
                   isActive={pathname === "/about"}
                   onHover={() => setHoveredItem("about")}
                   onLeave={() => setHoveredItem(null)}
                   isHovered={hoveredItem === "about"}
+                />
+
+                <NavItem
+                  href="/blog"
+                  label="Blog"
+                  isActive={pathname === "/blog"}
+                  onHover={() => setHoveredItem("blog")}
+                  onLeave={() => setHoveredItem(null)}
+                  isHovered={hoveredItem === "blog"}
                 />
 
                 <NavItem

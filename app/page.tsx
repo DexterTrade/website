@@ -363,7 +363,7 @@ export default function Home() {
           </FadeIn>
 
           <div className="relative max-w-6xl mx-auto">
-            <div className="overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-xl">
+            <div className="overflow-hidden rounded-xl bg-white dark:bg-gray-900 shadow-lg">
               <div className="relative h-[400px] md:h-[500px]">
                 {services.map((service, index) => (
                   <motion.div
@@ -409,33 +409,31 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Slider Controls */}
-            <div className="flex justify-center mt-8 space-x-2">
+            <div className="flex justify-center mt-6 space-x-1.5">
               {services.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentSlide
-                      ? "bg-blue-500"
+                      ? "bg-blue-500 scale-125"
                       : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
                   }`}
                 />
               ))}
             </div>
 
-            {/* Navigation Arrows */}
             <button
               onClick={() => setCurrentSlide((prev) => (prev - 1 + services.length) % services.length)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 p-1.5 rounded-full shadow-md hover:shadow-lg transition-all text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 backdrop-blur-sm"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % services.length)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 p-1.5 rounded-full shadow-md hover:shadow-lg transition-all text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 backdrop-blur-sm"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-5 w-5" />
             </button>
           </div>
         </div>
