@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { ProjectsGrid } from "./ProjectsGrid"
+import { Suspense } from "react"
 
 export const metadata = {
   title: "Our Projects | TechSolutions",
@@ -50,7 +51,9 @@ export default function ProjectsPage() {
           </div>
 
           <div className="max-w-6xl mx-auto">
+            <Suspense fallback={<></>}>
             <ProjectsGrid/>
+            </Suspense>
           </div>
         </div>
       </section>
