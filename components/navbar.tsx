@@ -337,7 +337,6 @@ function NavItem({
   isHovered: boolean
 }) {
   const {theme} = useTheme();
-  console.log("theme:",theme)
   return (
     <li>
       <Link
