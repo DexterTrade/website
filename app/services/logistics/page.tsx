@@ -43,7 +43,7 @@ export default function LogisticsPage() {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Logistics Solutions
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -75,7 +75,7 @@ export default function LogisticsPage() {
       <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Our Process
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -106,7 +106,7 @@ export default function LogisticsPage() {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
               Technology Stack
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -150,7 +150,7 @@ export default function LogisticsPage() {
               />
             </div>
             <div>
-              <div className="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
                 Why Choose Us
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
