@@ -710,7 +710,7 @@ export default function Home() {
                 <AnimatedButton
                   size="lg"
                   variant="outline"
-                  className="text-white border-white hover:bg-white/10 hover:text-white font-semibold px-6 md:px-8 w-full sm:w-auto"
+                  className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-gray-900 font-semibold px-6 md:px-8 w-full sm:w-auto"
                   hoverEffect="pulse"
                   iconAnimation={true}
                 >
