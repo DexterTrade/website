@@ -60,8 +60,8 @@ export default function LogisticsPage() {
                 key={index}
                 className="bg-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group text-center border"
               >
-                <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-orange-200 dark:group-hover:bg-orange-900/50 transition-colors">
-                  <service.icon className="h-8 w-8 text-orange-600 dark:text-orange-400" />
+                <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors">
+                  <service.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
                 <p className="text-muted-foreground text-sm sm:text-base">{service.description}</p>
@@ -90,8 +90,8 @@ export default function LogisticsPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {logisticsProcess.map((step, index) => (
                 <div key={index} className="bg-card rounded-2xl p-6 shadow-sm text-center border">
-                  <div className="bg-orange-100 dark:bg-orange-900/30 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <span className="text-orange-700 dark:text-orange-300 font-bold text-lg">{index + 1}</span>
+                  <div className="bg-blue-100 dark:bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <span className="text-blue-700 dark:text-blue-300 font-bold text-lg">{index + 1}</span>
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-foreground">{step.title}</h3>
                   <p className="text-muted-foreground text-sm">{step.description}</p>
@@ -121,7 +121,7 @@ export default function LogisticsPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {Object.entries(logisticsTech).map(([category, techs]) => (
                 <div key={category} className="text-center">
-                  <h3 className="text-lg font-bold mb-4 text-orange-600 dark:text-orange-400">{category}</h3>
+                  <h3 className="text-lg font-bold mb-4 text-blue-600 dark:text-blue-400">{category}</h3>
                   <div className="space-y-2">
                     {techs.map((tech, index) => (
                       <div key={index} className="bg-card rounded-lg p-3 text-sm font-medium border text-foreground">
@@ -163,7 +163,7 @@ export default function LogisticsPage() {
               <div className="space-y-4">
                 {logisticsBenefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-orange-500 dark:text-orange-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-base md:text-lg text-foreground">{benefit.title}</h3>
                       <p className="text-muted-foreground text-sm sm:text-base">{benefit.description}</p>
@@ -188,7 +188,7 @@ export default function LogisticsPage() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 w-full sm:w-auto"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8 w-full sm:w-auto"
               >
                 Get Logistics Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
