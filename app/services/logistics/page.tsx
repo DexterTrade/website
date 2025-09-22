@@ -31,7 +31,7 @@ export default function LogisticsPage() {
             warehousing, and delivery optimization services.
           </p>
           <Link href="/contact">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8">
+            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8">
               Optimize Your Supply Chain
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

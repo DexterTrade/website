@@ -33,7 +33,7 @@ export default function AIIntegrationPage() {
             to drive innovation and efficiency.
           </p>
           <Link href="/contact">
-            <Button size="lg" className="bg-purple-500 hover:bg-purple-600 text-white font-medium px-8">
+            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8">
               Start AI Transformation
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
