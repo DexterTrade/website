@@ -166,6 +166,7 @@ export function Navbar() {
                     { href: "/services/marketing", label: "Media Marketing" },
                     { href: "/services/cloud", label: "Cloud Services" },
                     { href: "/services/ai-integration", label: "AI Integration" },
+                    { href: "/services/logistics", label: "Logistics" },
                   ]}
                   pathname={pathname}
                   onHover={() => setHoveredItem("services")}
@@ -192,7 +193,7 @@ export function Navbar() {
                 />
 
                 <NavItem
-                  href="/blog"
+                  href="/blogs"
                   label="Blog"
                   isActive={pathname === "/blog"}
                   onHover={() => setHoveredItem("blog")}
@@ -335,6 +336,8 @@ function NavItem({
   onLeave: () => void
   isHovered: boolean
 }) {
+  const {theme} = useTheme();
+  console.log("theme:",theme)
   return (
     <li>
       <Link
@@ -348,7 +351,7 @@ function NavItem({
         onMouseLeave={onLeave}
       >
         <motion.span
-          animate={isHovered && !isActive ? { y: -2, color: "#3B82F6" } : { y: 0 }}
+          animate={isHovered && !isActive ? { y: -2 } : { y: 0 }}
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
           className="inline-block"
         >
@@ -430,7 +433,7 @@ function DropdownNavItem({
         type="button"
       >
         <motion.span
-          animate={isHovered && !isActive ? { y: -2, color: "#3B82F6" } : { y: 0 }}
+          animate={isHovered && !isActive ? { y: -2 } : { y: 0 }}
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
           className="inline-flex items-center gap-1"
         >
