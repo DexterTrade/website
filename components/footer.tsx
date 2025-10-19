@@ -155,16 +155,16 @@ export function Footer() {
               <li className="flex items-start justify-center sm:justify-start">
                 <MapPin className="h-5 w-5 text-amber-500 mr-3 mt-1 flex-shrink-0" />
                 <span className="text-gray-400 text-sm sm:text-base text-left">
-                  123 BuildMaster Ave, Construction City, BC 12345
+                  555 beechdale road , nottingham
                 </span>
               </li>
               <li className="flex items-start justify-center sm:justify-start">
                 <Phone className="h-5 w-5 text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-400 text-sm sm:text-base">(123) 456-7890</span>
+                <span className="text-gray-400 text-sm sm:text-base">+447404654725</span>
               </li>
               <li className="flex items-start justify-center sm:justify-start">
                 <Mail className="h-5 w-5 text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-400 text-sm sm:text-base">info@buildmaster.com</span>
+                <span className="text-gray-400 text-sm sm:text-base">Dextertradeltd@gmail.com</span>
               </li>
             </ul>
             <div className="mt-6">
