@@ -12,13 +12,13 @@ export function Footer() {
           <div className="text-center sm:text-left">
             <Link href="/" className="flex items-center gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
               <HardHat className="h-7 w-7 text-amber-500" />
-              <span className="text-xl font-bold text-white">BuildMaster</span>
+              <span className="text-xl font-bold text-white">Dexter Trade</span>
             </Link>
             <p className="text-gray-400 mb-6 text-sm sm:text-base">
               Your trusted partner for innovative construction solutions. Building excellence and delivering quality
               since 2000.
             </p>
-            <div className="flex space-x-4 justify-center sm:justify-start">
+            {/* <div className="flex space-x-4 justify-center sm:justify-start">
               <Link href="#" className="text-gray-400 hover:text-amber-500 transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
@@ -35,7 +35,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Services */}
@@ -44,50 +44,50 @@ export function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link
-                  href="/services/residential"
+                  href="/services/ecommerce"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  Residential Construction
+                  E-commerce
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/commercial"
+                  href="/services/software"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  Commercial Development
+                  Software Development
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/industrial"
+                  href="/services/marketing"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  Industrial Facilities
+                  Media Marketing
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/design"
+                  href="/services/cloud"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  Architectural Design
+                  Cloud
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/management"
+                  href="/services/ai-integration"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  Project Management
+                  AI Integration
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/sustainable"
+                  href="/services/logistics"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  Sustainable Building
+                  Logistics
                 </Link>
               </li>
             </ul>
@@ -179,7 +179,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 sm:mt-10 pt-6 text-center text-gray-400 text-sm max-w-6xl mx-auto">
-          <p>&copy; {new Date().getFullYear()} BuildMaster Construction. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Dexter Trade. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -44,7 +44,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-foreground">Our Location</h3>
-                    <p className="text-muted-foreground">123 BuildMaster Ave, Construction City, BC 12345</p>
+                    <p className="text-muted-foreground">555 beechdale road , nottingham</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -53,7 +53,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-foreground">Phone Number</h3>
-                    <p className="text-muted-foreground">(123) 456-7890</p>
+                    <p className="text-muted-foreground">+447404654725</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -62,7 +62,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-foreground">Email Address</h3>
-                    <p className="text-muted-foreground">info@buildmaster.com</p>
+                    <p className="text-muted-foreground">Dextertradeltd@gmail.con</p>
                   </div>
                 </div>
                 <div className="flex items-start">
