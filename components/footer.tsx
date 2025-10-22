@@ -12,14 +12,14 @@ export function Footer() {
           {/* Company Info */}
           <div className="text-center sm:text-left">
             <Link href="/" className="flex items-center gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
-              <HardHat className="h-7 w-7 text-amber-500" />
+              {/* <HardHat className="h-7 w-7 text-amber-500" /> */}
               <span className="text-xl font-bold text-white">Dexter Trade</span>
             </Link>
             <p className="text-gray-400 mb-6 text-sm sm:text-base">
-              Your trusted partner for innovative construction solutions. Building excellence and delivering quality
-              since 2000.
+              Your trusted partner for innovative IT solutions. Building excellence and delivering quality
+              since 2024.
             </p>
-            {/* <div className="flex space-x-4 justify-center sm:justify-start">
+            <div className="flex space-x-4 justify-center sm:justify-start">
               <Link href="#" className="text-gray-400 hover:text-amber-500 transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
@@ -36,7 +36,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-            </div> */}
+            </div>
           </div>
 
           {/* Services */}

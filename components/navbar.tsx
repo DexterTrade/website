@@ -194,11 +194,11 @@ export function Navbar() {
 
                 <NavItem
                   href="/blogs"
-                  label="Blog"
-                  isActive={pathname === "/blog"}
-                  onHover={() => setHoveredItem("blog")}
+                  label="Blogs"
+                  isActive={pathname === "/blogs"}
+                  onHover={() => setHoveredItem("blogs")}
                   onLeave={() => setHoveredItem(null)}
-                  isHovered={hoveredItem === "blog"}
+                  isHovered={hoveredItem === "blogs"}
                 />
 
                 <NavItem

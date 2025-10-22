@@ -77,7 +77,8 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            <div>
+
+            {/* <div>
               <div id="quote-form" className="scroll-mt-24">
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Request a Free Quote</h3>
                 <p className="text-muted-foreground mb-6">
@@ -149,7 +150,41 @@ export default function ContactPage() {
                   </Button>
                 </form>
               </div>
-            </div>
+            </div> */}
+            <div id="quote-form" className="scroll-mt-24">
+  <h3 className="text-2xl font-bold mb-4 text-foreground">Connect with Us on WhatsApp</h3>
+  <p className="text-muted-foreground mb-6">
+    Scan the QR code below to start a direct conversation with our team on WhatsApp. We're available to discuss your
+    project, provide quotes, or answer any questions you may have.
+  </p>
+  <div className="bg-muted/50 p-10 rounded-2xl shadow-sm flex flex-col items-center justify-center text-center">
+    <Image
+      src="/images/whatsapp-qr.png" // replace with your actual QR image path
+      alt="WhatsApp QR Code"
+      width={220}
+      height={220}
+      className="rounded-lg mb-6 border border-border"
+    />
+    <p className="text-muted-foreground mb-6 text-lg">
+      Or click the button below to chat directly on WhatsApp.
+    </p>
+    <Button
+      asChild
+      className="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg"
+    >
+      <a
+        href="https://wa.me/447404654725"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chat on WhatsApp
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </a>
+    </Button>
+  </div>
+</div>
+
+
           </div>
         </div>
       </section>

@@ -39,8 +39,30 @@ export default function LogisticsPage() {
         </div>
       </section>
 
-      {/* Services Overview */}
+      {/* New About Section */}
       <section className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 
+          text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
+            About Dexter Logistics
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Global Cargo & Freight Solutions You Can Trust
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <strong>Dexter Logistics</strong> and Couriers is a premier cargo, logistics, and freight-forwarding company, established in 
+            the UK and now strategically based in Lahore, Pakistan. We specialize in seamless air freight and cargo services 
+            from Pakistan to major global destinations including the UK, USA, UAE, Saudi Arabia, France, Canada, and all of 
+            Europe. Whether you are sending cherished household goods to loved ones or managing large commercial loads and 
+            inventories, we provide complete peace of mind. Our signature <strong>DDP (Delivered Duty Paid)</strong> service 
+            ensures your consignment arrives with all duties pre-handled—no hidden costs, no customs tension, just guaranteed, 
+            hassle-free delivery. <strong>Trust Dexter</strong> to connect you globally.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
             <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
@@ -71,7 +93,7 @@ export default function LogisticsPage() {
         </div>
       </section>
 
-      {/* Logistics Process */}
+      {/* Logistics Process
       <section className="py-12 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
@@ -100,9 +122,9 @@ export default function LogisticsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Technology Solutions */}
+      {/* Technology Solutions
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
@@ -134,10 +156,10 @@ export default function LogisticsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Benefits Section */}
-      <section className="py-12 md:py-20 bg-muted/50">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">

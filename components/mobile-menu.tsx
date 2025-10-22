@@ -107,7 +107,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </div>
               <MobileNavItem href="/projects" label="Projects" isActive={pathname === "/projects"} onClick={onClose} />
               <MobileNavItem href="/about" label="About Us" isActive={pathname === "/about"} onClick={onClose} />
-              <MobileNavItem href="/blog" label="Blog" isActive={pathname === "/blog"} onClick={onClose} />
+              <MobileNavItem href="/blogs" label="Blogs" isActive={pathname === "/blogs"} onClick={onClose} />
               <MobileNavItem href="/contact" label="Contact" isActive={pathname === "/contact"} onClick={onClose} />
             </nav>
 
