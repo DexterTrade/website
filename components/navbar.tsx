@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button"
 import { AnimatedButton } from "@/components/ui/animated-button"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
 import { MobileMenu } from "@/components/mobile-menu"
+import Logo from "./svg/logo"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -120,31 +121,31 @@ export function Navbar() {
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 max-w-[1920px]">
           <div className="flex h-14 sm:h-16 md:h-18 lg:h-20 items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group">
-                <motion.div
-                  whileHover={{ rotate: 15, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="bg-blue-500 text-white p-1.5 sm:p-2 rounded-lg"
-                >
-                  <Code className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
-                </motion.div>
-                <div className="flex flex-col">
-                  <motion.span
-                    className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-none"
-                    initial={{ opacity: 1 }}
-                    whileHover={{ scale: 1.03, color: "#3B82F6" }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="inline xs:hidden">TS</span>
-                    <span className="hidden xs:inline">TechSolutions</span>
-                  </motion.span>
-                  <span className="text-[10px] sm:text-xs text-muted-foreground hidden xs:inline">
-                    Digital Innovation
-                  </span>
-                </div>
-              </Link>
-            </div>
+             <div className="flex items-center">
+      <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group">
+        <motion.div
+          whileHover={{ rotate: 15, scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          className="bg-blue-500 text-white p-1.5 sm:p-2 rounded-lg"
+        >
+          <Logo className="h-8 w-8 text-white" />
+        </motion.div>
+        <div className="flex flex-col">
+          <motion.span
+            className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-none"
+            initial={{ opacity: 1 }}
+            whileHover={{ scale: 1.03, color: "#3B82F6" }}
+            transition={{ duration: 0.2 }}
+          >
+            <span className="inline xs:hidden capitalize">Dexter</span>
+            <span className="hidden xs:inline">Dexter Trade</span>
+          </motion.span>
+          <span className="text-[10px] sm:text-xs text-muted-foreground hidden xs:inline">
+            Digital Innovation
+          </span>
+        </div>
+      </Link>
+    </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center justify-center">
