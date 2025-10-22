@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { HardHat, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
+// import Logo from "@/public/dexterlogo.svg"
 
 import { Button } from "@/components/ui/button"
 
