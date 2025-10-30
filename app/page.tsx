@@ -31,6 +31,35 @@ import { ScrollProgress } from "@/components/animations/scroll-progress"
 import { useState, useEffect } from "react"
 import TextType from "@/components/animations/TextType"
 
+// app/layout.js
+export const metadata = {
+  title: 'Dexter Trades',
+  description:
+    'Innovative technology solutions for e-commerce, software development, media marketing, and cloud services with unmatched quality and precision.',
+  openGraph: {
+    type: 'website',
+    url: 'https://www.dextertrade.co.uk/',
+    title: 'Dexter Trades',
+    description:
+      'Innovative technology solutions for e-commerce, software development, media marketing, and cloud services with unmatched quality and precision.',
+    images: [
+      {
+        url: 'https://www.dextertrade.co.uk/favicon.ico', // replace with your real image
+        width: 1200,
+        height: 630,
+        alt: 'Dexter Trades',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dexter Trades',
+    description:
+      'Innovative technology solutions for e-commerce, software development, media marketing, and cloud services with unmatched quality and precision.',
+    images: ['https://www.dextertrade.co.uk/favicon.ico'], // replace with your image
+  },
+};
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -170,21 +199,17 @@ export default function Home() {
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-md">
-                <TextType
-                  text={[
-                    `Building Tomorrow's Digital Solutions Today`,
-                    `Building Tomorrow's Digital Solutions Today`
-                  ]}
+                Building Tomorrow's <span className="text-blue-400">Digital Solutions</span> Today
+              </h1>
+
+              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-xl md:max-w-2xl mx-auto drop-shadow-md">
+              <TextType
+                  text={[`Innovative technology solutions for e-commerce, software development, media marketing, and cloud services with unmatched quality and precision.`]}
                   typingSpeed={75}
                   pauseDuration={1500}
                   showCursor={true}
                   cursorCharacter="|"
                 ></TextType>
-              </h1>
-
-              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-xl md:max-w-2xl mx-auto drop-shadow-md">
-                Innovative technology solutions for e-commerce, software development, media marketing, and cloud
-                services with unmatched quality and precision.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
