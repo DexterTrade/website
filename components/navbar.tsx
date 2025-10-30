@@ -129,8 +129,8 @@ export function Navbar() {
 								href="/"
 								className="flex items-center gap-1.5 sm:gap-2 group"
 							>
-								<div className="bg-blue-500 text-white p-1.5 sm:p-2 rounded-lg">
-									<Logo className="h-8 w-8 text-white" />
+								<div className="bg-blue-500 text-white p-1.5 sm:p-2 rounded-lg pointer-events-none">
+									<Logo className="h-10 w-20 text-white" />
 								</div>
 								<div className="flex flex-col">
 									<motion.span
