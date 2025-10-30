@@ -119,7 +119,7 @@ export function Navbar() {
 				} safe-top`}
 				initial="visible"
 				animate={shouldShowNavbar ? "visible" : "hidden"}
-				variants={navVariants}
+				variants={navVariants as any}
 			>
 				<div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 max-w-[1920px]">
 					<div className="flex h-14 sm:h-16 md:h-18 lg:h-20 items-center justify-between">
