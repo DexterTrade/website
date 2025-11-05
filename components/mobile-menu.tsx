@@ -3,10 +3,11 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Code, ChevronRight, X } from "lucide-react"
+import { ChevronRight, X } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { AnimatedButton } from "@/components/ui/animated-button"
+import Logo from "./svg/logo"
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -71,12 +72,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             {/* Header */}
             <div className="flex items-center justify-between border-b py-3 sm:py-4">
               <Link href="/" className="flex items-center gap-2" onClick={onClose}>
-                <div className="bg-blue-500 text-white p-1.5 rounded-md">
-                  <Code className="h-5 w-5" />
-                </div>
+                {/* <div className="bg-blue-500 text-white p-1.5 sm:p-2 rounded-lg pointer-events-none">
+                  <Logo className="h-10 w-20 text-white" />
+                </div> */}
                 <div className="flex flex-col">
-                  <span className="text-lg font-bold">TechSolutions</span>
-                  <span className="text-xs text-muted-foreground">Digital Innovation</span>
+                  <span className="text-lg font-bold">Dexter</span>
+                  <span className="text-xs text-muted-foreground">Trade</span>
                 </div>
               </Link>
               <Button

@@ -7,6 +7,12 @@ export const metadata = {
   title: "Cloud Services | TechMaster Solutions",
   description:
     "Cloud infrastructure, migration services, scalable hosting solutions, and cloud security for modern businesses.",
+  openGraph: {
+    title: "Cloud Services | TechMaster Solutions",
+    description: "Migrate to cloud with scalable, secure infrastructure.",
+    url: "https://www.dextertrade.co.uk/services/cloud",
+    images: ["/cloud-computing-servers.png"],
+  },
 }
 
 export default function CloudPage() {

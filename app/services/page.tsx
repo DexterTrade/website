@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
@@ -12,7 +11,7 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative h-[300px] sm:h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
@@ -33,25 +32,26 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-3 md:mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-3 md:mb-4">
               What We Offer
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-6">
               Comprehensive Technology Solutions
             </h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
               From concept to deployment, we provide end-to-end technology services to accelerate your digital
               transformation with innovation and excellence.
             </p>
           </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10 max-w-6xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group"
+                className="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg dark:hover:shadow-blue-900/40 transition-all duration-300 group border border-gray-100 dark:border-gray-700"
               >
                 <div className="relative h-48 md:h-56 overflow-hidden">
                   <Image
@@ -64,7 +64,9 @@ export default function ServicesPage() {
                 </div>
                 <div className="p-6 md:p-8">
                   <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">{service.title}</h3>
-                  <p className="text-gray-700 mb-5 md:mb-6 text-sm sm:text-base">{service.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-5 md:mb-6 text-sm sm:text-base">
+                    {service.description}
+                  </p>
                   <Link href={service.link}>
                     <Button className="bg-blue-500 hover:bg-blue-600 text-white w-full">
                       Learn More
@@ -79,52 +81,49 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-3 md:mb-4">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-3 md:mb-4">
               Our Process
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-6">How We Work</h2>
-            <p className="text-base md:text-lg text-gray-700">
+            <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
               Our agile development process ensures a smooth experience from initial consultation to deployment and
               ongoing support.
             </p>
           </div>
-          <div className="max-w-5xl mx-auto">
-            <div className="relative">
-              {/* Vertical line - hidden on mobile, visible on larger screens */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 hidden md:block"></div>
 
-              {/* Process steps - mobile optimized */}
-              <div className="space-y-8 md:space-y-12 relative">
-                {processSteps.map((step, index) => (
-                  <div
-                    key={index}
-                    className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-                  >
-                    <div className="md:w-1/2 relative w-full">
-                      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-md relative z-10">
-                        <div className="bg-blue-100 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4">
-                          <span className="text-blue-700 font-bold text-lg md:text-xl">{index + 1}</span>
-                        </div>
-                        <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-4">{step.title}</h3>
-                        <p className="text-gray-700 text-sm sm:text-base">{step.description}</p>
+          <div className="max-w-5xl mx-auto relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 dark:bg-blue-800 hidden md:block"></div>
+            <div className="space-y-8 md:space-y-12 relative">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                >
+                  <div className="md:w-1/2 relative w-full">
+                    <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-md dark:shadow-blue-900/30 relative z-10 border border-gray-100 dark:border-gray-700">
+                      <div className="bg-blue-100 dark:bg-blue-900/40 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4">
+                        <span className="text-blue-700 dark:text-blue-300 font-bold text-lg md:text-xl">
+                          {index + 1}
+                        </span>
                       </div>
-                      {/* Circle on the timeline - hidden on mobile */}
-                      <div className="absolute top-1/2 left-0 md:left-auto md:right-0 transform translate-y-[-50%] translate-x-[-50%] md:translate-x-[50%] w-6 h-6 bg-blue-500 rounded-full border-4 border-white z-20 hidden md:block"></div>
+                      <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-4">{step.title}</h3>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">{step.description}</p>
                     </div>
-                    <div className="md:w-1/2 hidden md:block">{/* This div is just for spacing in the timeline */}</div>
+                    <div className="absolute top-1/2 left-0 md:left-auto md:right-0 transform translate-y-[-50%] translate-x-[-50%] md:translate-x-[50%] w-6 h-6 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900 z-20 hidden md:block"></div>
                   </div>
-                ))}
-              </div>
+                  <div className="md:w-1/2 hidden md:block"></div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center max-w-6xl mx-auto">
             <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl order-2 md:order-1">
@@ -137,11 +136,11 @@ export default function ServicesPage() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-3 md:mb-4">
+              <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-3 md:mb-4">
                 Why Choose Us
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-6">The TechMaster Difference</h2>
-              <p className="text-base md:text-lg text-gray-700 mb-5 md:mb-8">
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-5 md:mb-8">
                 When you choose TechMaster, you're choosing a partner committed to innovation, reliability, and your
                 digital success.
               </p>
@@ -151,7 +150,7 @@ export default function ServicesPage() {
                     <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-blue-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-base md:text-lg">{benefit.title}</h3>
-                      <p className="text-gray-700 text-sm sm:text-base">{benefit.description}</p>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">{benefit.description}</p>
                     </div>
                   </div>
                 ))}
@@ -162,10 +161,10 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 bg-gray-900 text-white">
+      <section className="py-12 md:py-20 bg-gray-900 dark:bg-gray-950 text-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">Ready to Start Your Project?</h2>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-xl md:max-w-2xl mx-auto mb-6 md:mb-10">
+          <p className="text-gray-300 dark:text-gray-400 text-sm sm:text-base md:text-lg max-w-xl md:max-w-2xl mx-auto mb-6 md:mb-10">
             Contact us today for a free consultation and discover how TechMaster can accelerate your digital
             transformation.
           </p>

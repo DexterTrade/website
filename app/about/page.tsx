@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Award, Clock, Target, Eye, Lightbulb, Compass,
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
-  title: "About Us | TechSolutions",
+  title: "About Us | Dexter",
   description:
     "Learn about TechSolutions' history, values, and our expert team dedicated to excellence in technology services and digital innovation.",
 }
